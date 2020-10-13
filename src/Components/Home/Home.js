@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from '../Navbar/Navbar';
 import Feedbacks from './Feedbacks/Feedbacks';
 import Footer from './Footer/Footer';
 import Header from './Header/Header';

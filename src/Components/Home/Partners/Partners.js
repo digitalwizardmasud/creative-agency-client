@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, Row, Col, Button} from 'react-bootstrap'
+import {Container, Row, Col} from 'react-bootstrap'
 import airbnb from '../../../images/logos/airbnb.png'
 import google from '../../../images/logos/google.png'
 import netflix from '../../../images/logos/netflix.png'
