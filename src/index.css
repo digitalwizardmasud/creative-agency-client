@@ -14,3 +14,15 @@ code {
 .brand-text{
   color:#7AB259;
 }
+div{
+  font-family: 'Poppins', sans-serif;
+}
+
+input[placeholder]{
+  font-weight:100;
+  font-size:14px;
+}
+textarea[placeholder]{
+  font-weight:100;
+  font-size:14px;
+}

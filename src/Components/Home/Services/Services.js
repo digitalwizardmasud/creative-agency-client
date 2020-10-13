@@ -1,13 +1,13 @@
 import React from 'react';
 
-const Slider = () => {
+const Services = () => {
     return (
-        <div>
+        <div style={{margin:'100px 0'}}>
             <h4 style={{color:'#2d2d2d'}} className='font-weight-bold text-center'>
-                Here are some of <span className='brand-text'>our works</span>
+                Provide awesome <span className='brand-text'>services</span>
             </h4>
         </div>
     );
 };
 
-export default Slider;
+export default Services;
