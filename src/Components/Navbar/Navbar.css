@@ -7,3 +7,31 @@
 .my-navlink{
     color:black
 }
+
+.nav-items{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.toogler{
+    display:none;
+}
+@media only screen and (max-width:991px){
+    .nav-items{
+        display:none;
+    }
+    .toogler{
+        display:block;
+    }
+    .toogled-items{
+        display:flex;
+        flex-direction: column;
+        margin-top:20px;
+    }
+    
+}
+
+.toogled-items{
+    justify-content: center;
+    align-items: center;
+}
