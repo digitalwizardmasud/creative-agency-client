@@ -10,12 +10,12 @@ const Order = () => {
                 <Col md={2}>
                     <LeftNavbar></LeftNavbar>
                 </Col>
-                <Col md={10} >
+                <Col md={9} >
                 <h4 className='mt-4 ml-5'>Order</h4>
                     <Container className='m-5 order-form-container'>
                     <Form >
                         <Row xs={12} className='p-5'>
-                            <Col md={5}>
+                            <Col md={6}>
                                 <Form.Group controlId="formBasicEmail">
                                     <Form.Control type="email" placeholder="Your name / Company's name" />
                                 </Form.Group>

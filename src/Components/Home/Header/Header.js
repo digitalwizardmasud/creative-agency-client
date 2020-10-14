@@ -11,7 +11,7 @@ const Header = () => {
             <Container className='mt-5'>
                 <Row xs={12} className='align-items-center'>
                     <Col md={5} >
-                        <h1 style={{fontWeight:'bold', color:'#111430'}} className='header-font my-font'>
+                        <h1 style={{fontWeight:'700', color:'#111430'}} className='header-font pr-5'>
                             Let's Grow Your Brand To The Next Level
                         </h1>
                         <Button className='btn-dark mt-3 px-4'>Hire me</Button>

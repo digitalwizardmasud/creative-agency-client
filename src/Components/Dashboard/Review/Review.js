@@ -26,7 +26,6 @@ const Review = () => {
                                 <Form.Group controlId="exampleForm.ControlTextarea1">
                                     <Form.Control as="textarea" rows="5" placeholder='Description'/>
                                 </Form.Group>
-
                                 <Button className='btn-dark px-3 py-1'>Submit</Button>
                             </Col>
                         </Row>
@@ -38,4 +37,4 @@ const Review = () => {
     );
 };
 
-export default Review;
+export default Review; 

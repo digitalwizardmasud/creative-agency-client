@@ -7,10 +7,10 @@ const Footer = () => {
             <Container>
                 <Row xs={12}>
                     <Col md={6}>
-                        <h3  >Let us handle your project professionally</h3>
-                        <p style={{fontWeight:'100', fontSize:'14px', color:'rgba(0, 0, 0, 0.7)', marginTop:'20px'}}>
+                        <h3 style={{fontSize:'34px', fontWeight:'600'}} >Let us handle your project professionally</h3>
+                        <small style={{ marginTop:'20px', fontSize:'14px', fontWeight:'300'}}>
                             With well written codes, we build amazing apps for all platforms, mobile and web apps in general
-                        </p>
+                        </small>
                     </Col>
                     <Col md={6}>
                     <Form>
