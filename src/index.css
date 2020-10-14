@@ -24,3 +24,7 @@ input[placeholder]{
 textarea[placeholder]{
   font-size:15px
 }
+.link:hover{
+  font-weight:bold;
+  color:rgb(54, 51, 51);
+}

@@ -23,19 +23,19 @@ const Navbar = () => {
 
                     <Col xs={12} lg={6} className={`nav-items ${menu && ' toogled-items' }`}>
                         
-                        <Link className={`${window.location.pathname=='/'?'matched-path':'my-navlink'} `} to='/'><span>Home</span></Link>
+                        <Link className={`link ${window.location.pathname=='/'?'matched-path':'my-navlink'} `} to='/'><span>Home</span></Link>
                         {
                              ['Our Team', 'Our Portfolio', 'Contact Us'].map(item=>{
                                  const matchedPath=window.location.pathname=='/'+item.toLowerCase().split(' ').join('-')
                                 return(
-                                    <Link className={`${matchedPath?'matched-path':'my-navlink'} mx-2 my-2 `} to={`/${item.toLowerCase().split(' ').join('-')}`}
+                                    <Link className={`link ${matchedPath?'matched-path':'my-navlink'} mx-2 my-2 `} to={`/${item.toLowerCase().split(' ').join('-')}`}
                                          >
                                         <span>{item}</span>
                                     </Link>
                                 )
                             })
                         }
-                        <Button style={{padding:'4px 20px'}} className='btn-dark btn-sm'>Login</Button>
+                        <Link to='/login' className='link'><Button style={{padding:'4px 20px'}} className='btn-dark btn-sm'>Login</Button></Link>
                     </Col>
                 </Row>
             </Container>
