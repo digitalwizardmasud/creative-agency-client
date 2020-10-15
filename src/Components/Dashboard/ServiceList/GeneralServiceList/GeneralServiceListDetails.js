@@ -4,9 +4,9 @@ import './GeneralServiceListDetails.css'
 const GeneralServiceListDetails = ({service}) => {
     return (
         
-            <Col xs={10} md={5} className='text-left'>
+            <Col xs={12} md={8} lg={6} className='text-left'>
             <Card className='general-service-list-details-card mt-5' style={{ width: '90%',margin:'auto', borderRadius:'10px' }}>
-                <Card.Body>
+                <Card.Body style={{margin:'auto'}}>
                     <div className='d-flex justify-content-between align-items-center'>
                         <img style={{width:'74px', marginBottom:'10px'}} src={`data:${service.projectImage?.contentType};base64,${service.projectImage?.img}`} alt=""/>
                         {/* <p style={{background:'#FFE3E3', color:'#FF4545', borderRadius:'5px', padding:'5px'}}>

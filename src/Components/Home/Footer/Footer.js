@@ -6,9 +6,9 @@ const Footer = () => {
         <div className='footer-container'>
             <Container>
                 <Row xs={12}>
-                    <Col md={6}>
-                        <h3 style={{fontSize:'34px', fontWeight:'600'}} >Let us handle your project professionally</h3>
-                        <small style={{ marginTop:'20px', fontSize:'14px', fontWeight:'300'}}>
+                    <Col md={6} className='footer'>
+                        <h1  style={{ fontWeight:'600'}} >Let us handle your project professionally</h1>
+                        <small style={{ marginTop:'20px',  fontWeight:'300'}}>
                             With well written codes, we build amazing apps for all platforms, mobile and web apps in general
                         </small>
                     </Col>
@@ -23,7 +23,7 @@ const Footer = () => {
                             <Form.Control type="password" placeholder="Your name / Company's name" />
                         </Form.Group>
                         <Form.Group controlId="exampleForm.ControlTextarea1">
-                            <Form.Control as="textarea" rows="3" placeholder='Your message'/>
+                            <Form.Control className='footer-textarea' as="textarea" rows="3" placeholder='Your message'/>
                         </Form.Group>
                         <Button variant="dark" type="submit">
                             Submit

@@ -33,7 +33,7 @@ const Review = () => {
                     <Container className='m-5 order-form-container'>
                     <Form onSubmit={addReviewFormHandler}>
                         <Row xs={12} className='p-5'>
-                            <Col md={5}>
+                            <Col xs={12} md={7} lg={6}>
                                 <Form.Group controlId="formBasicName">
                                     <Form.Control onBlur={inputHandler} name='name' type="name" placeholder="Your name" />
                                 </Form.Group>

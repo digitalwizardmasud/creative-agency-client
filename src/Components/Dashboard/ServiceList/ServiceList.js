@@ -25,7 +25,7 @@ const ServiceList = () => {
     return (
         <div>
             <Row xs={12}>
-                <Col md={2}>
+                <Col md={3} lg={2}>
                     <LeftNavbar></LeftNavbar>
                 </Col>
                 <Col md={9} >

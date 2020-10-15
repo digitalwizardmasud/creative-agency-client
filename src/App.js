@@ -12,6 +12,7 @@ import Login from './Components/Login/Login';
 import { createContext } from 'react';
 import { useEffect } from 'react';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute'
+import NotFound from './Components/NotFound/NotFound';
 export const UserContext=createContext()
 function App() {
   const [data,setData]=useState({})
@@ -73,6 +74,9 @@ function App() {
 
           <Route exact path='/login'>
             <Login></Login>
+          </Route>
+          <Route path='*'>
+            <NotFound></NotFound>
           </Route>
 
         </Switch>

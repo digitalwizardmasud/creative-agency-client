@@ -40,10 +40,10 @@ const Order = () => {
                 </Col>
                 <Col md={9} >
                 <h4 className='mt-4 ml-5'>Order</h4>
-                    <Container className='m-5 order-form-container'>
+                    <Container className='order-form-container'>
                     <Form onSubmit={addOrderForm}>
                         <Row xs={12} className='p-5'>
-                            <Col md={6}>
+                            <Col xs={12} md={7} lg={6}>
                                 <Form.Group controlId="formBasicEmail">
                                     <Form.Control onBlur={inputHandler} name='name' type="name" placeholder="Your name / Company's name" value={order.name}/>
                                 </Form.Group>

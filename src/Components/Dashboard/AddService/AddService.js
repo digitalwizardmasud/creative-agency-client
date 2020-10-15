@@ -22,15 +22,15 @@ const AddService = () => {
     return (
         <div>
             <Row xs={12}>
-                <Col md={2}>
+                <Col xs={12} lg={2}>
                     <LeftNavbar></LeftNavbar>
                 </Col>
-                <Col md={9} >
+                <Col xs={12} lg={8} >
                     <h4 className='mt-4 ml-5'>Add Service</h4>
-                    <Container className='m-5 add-service-form-container'>
+                    <Container className='mt-5 add-service-form-container'>
                     <Form >
                         <Row xs={12} className='p-4'>
-                            <Col md={6}>
+                            <Col md={8} lg={6}>
                                 <Form.Label>Service Title</Form.Label>
                                 <Form.Group controlId="formBasicText">
                                 <Form.Control onBlur={inputHandler} name='serviceTitle' type="text" placeholder="Enter title" />
@@ -42,7 +42,7 @@ const AddService = () => {
                                     <Form.Control onBlur={inputHandler} name='description' as="textarea" rows="5" placeholder='Description'/>
                                 </Form.Group>
                             </Col>
-                            <Col md={6} className='mt-3 '>
+                            <Col md={8} lg={6} className='mt-3 '>
                                 <div className='file-upload' 
                                     style={{background:`url(${upload}) no-repeat`, backgroundSize:'30px 30px'}}>
                                     <input onChange={event=>setService({...service,img:event.target.files[0]})} type="file"/>

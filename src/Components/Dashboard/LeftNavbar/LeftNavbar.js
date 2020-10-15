@@ -17,7 +17,7 @@ const LeftNavbar = () => {
         <div className='left-navbar'>
             <div className='pt-4 pb-5 pl-2'>
                 <Link to='/'>
-                    <img style={{height:'50px'}} src={logo} alt=""/>
+                    <img style={{width:'120px'}} src={logo} alt=""/>
                 </Link>
             </div>
             <div>
