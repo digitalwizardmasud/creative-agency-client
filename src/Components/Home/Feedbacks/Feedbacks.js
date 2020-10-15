@@ -1,29 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container,Row } from 'react-bootstrap';
 import FeedbackDetails from './FeedbackDetails';
 import man from '../../../images/customer-1.png'
 const Feedbacks = () => {
-    const allFeedbacks=[
-        {
-            name:'Mirriam Barun',
-            designationAndCompany:'CEO, Menpol',
-            img:man,
-            description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus commodo ipsum duis laoreet maecenas. Feugiat '
-        },
-        {
-            name:'Mirriam Barun',
-            designationAndCompany:'CEO, Menpol',
-            img:man,
-            description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus commodo ipsum duis laoreet maecenas. Feugiat '
-        },
-        {
-            name:'Mirriam Barun',
-            designationAndCompany:'CEO, Menpol',
-            img:man,
-            description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus commodo ipsum duis laoreet maecenas. Feugiat '
-        }
-    ]
-
+    const [allFeedbacks,setAllFeedbacks]=useState([])
+    useEffect(()=>{
+        fetch('http://localhost:3001/show-feedbacks')
+        .then(res=>res.json())
+        .then(result=>{
+            setAllFeedbacks(result)
+        })
+    },[])
+    console.log(allFeedbacks)
     return (
         <div style={{margin:'100px 0'}}>
             <Container>

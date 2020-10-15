@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {Container, Row, Col, Button} from 'react-bootstrap'
 import logo from '../../images/logos/logo.png'
 import {Link} from 'react-router-dom'
 import './Navbar.css'
 import MenuIcon from '@material-ui/icons/Menu';
 import { useState } from 'react';
+import { UserContext } from '../../App';
 const Navbar = () => {
     const [menu,setMenu]=useState(false)
-    console.log(menu)
+    const [data,setData]=useContext(UserContext)
+    
     return (
         <div style={{paddingTop:'20px'}}>
             <Container>
@@ -35,7 +37,11 @@ const Navbar = () => {
                                 )
                             })
                         }
-                        <Link to='/login' className='link'><Button style={{padding:'4px 20px'}} className='btn-dark btn-sm'>Login</Button></Link>
+                        {
+                            data.user? <Link to='/dashboard' className='link my-navlink'><span> Dashboard</span></Link>
+                            :<Link to='/login' className='link'><Button style={{padding:'4px 20px'}} className='btn-dark btn-sm'>Login</Button></Link>
+                        
+                        }
                     </Col>
                 </Row>
             </Container>

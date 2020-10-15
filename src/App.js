@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import {BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from './Components/Home/Home';
@@ -9,9 +9,33 @@ import AddService from './Components/Dashboard/AddService/AddService';
 import MakeAdmin from './Components/Dashboard/MakeAdmin/MakeAdmin';
 import Dashboard from './Components/Dashboard/Dashboard';
 import Login from './Components/Login/Login';
+import { createContext } from 'react';
+import { useEffect } from 'react';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute'
+export const UserContext=createContext()
 function App() {
+  const [data,setData]=useState({})
+
+
+    useEffect(()=>{
+      const sessionData=sessionStorage.getItem('token')
+    const token=JSON.parse(sessionData)
+    token && fetch('http://localhost:3001',{
+      method:'GET',
+      headers:{ 
+        'Content-Type':'application/json',
+        token:token
+      }
+    })
+    .then(res=>res.json())
+    .then(result=>{
+      setData({...data,user:{name:result.name, email:result.email, img:result.picture}})
+    })
+    },[])
+    
+
   return (
-    <div>
+    <UserContext.Provider value={[data,setData]}>
       <Router>
         <Switch>
 
@@ -23,9 +47,9 @@ function App() {
             <Home></Home>
           </Route>
 
-          <Route exact path='/dashboard'>
+          <PrivateRoute exact path='/dashboard'>
             <Dashboard></Dashboard>
-          </Route>
+          </PrivateRoute>
 
           <Route exact path='/dashboard/service-list'>
             <ServiceList></ServiceList>
@@ -53,7 +77,7 @@ function App() {
 
         </Switch>
       </Router>
-    </div>
+    </UserContext.Provider>
   );
 }
 

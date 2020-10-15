@@ -1,26 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useEffect } from 'react';
 import {Container, Row} from 'react-bootstrap';
 import webIcon from '../../../images/icons/service1.png'
 import ServiceDetails from './ServiceDetails';
 const Services = () => {
-
-    const allService=[
-        {
-            title:'Web & Mobile design',
-            description:'We craft stunning and amazing web UI, using a well drrafted UX to fit your product.',
-            img:webIcon
-        },
-        {
-            title:'Web & Mobile design',
-            description:'We craft stunning and amazing web UI, using a well drrafted UX to fit your product.',
-            img:webIcon
-        },
-        {
-            title:'Web & Mobile design',
-            description:'We craft stunning and amazing web UI, using a well drrafted UX to fit your product.',
-            img:webIcon
-        }
-    ]
+    const [allService,setAllService]=useState([])
+    useEffect(()=>{
+        fetch('http://localhost:3001/show-all-service')
+        .then(res=>res.json())
+        .then(result=>{
+            setAllService(result)
+            console.log(result)
+        })
+    },[])
     return (
         <div style={{marginTop:'100px', marginBottom:'50px'}}>
             <Container>
@@ -30,7 +22,7 @@ const Services = () => {
                 <Row xs={12} className='align-items-center' style={{marginTop:'60px'}}>
                     {
                         allService.map(service=>{
-                            return <ServiceDetails service={service}></ServiceDetails>
+                            return <ServiceDetails key={service._id} service={service}></ServiceDetails>
                         })
                     }
                 </Row>
