@@ -15,10 +15,11 @@ import PrivateRoute from './Components/PrivateRoute/PrivateRoute'
 export const UserContext=createContext()
 function App() {
   const [data,setData]=useState({})
- 
+  
 
     useEffect(()=>{
-      const sessionData=sessionStorage.getItem('token')
+      //get token and fetch user info
+    const sessionData=sessionStorage.getItem('token')
     const token=JSON.parse(sessionData)
     token && fetch('http://localhost:3001',{
       method:'GET',
@@ -33,7 +34,6 @@ function App() {
     })
     },[])
     
-
   return (
     <UserContext.Provider value={[data,setData]}>
       <Router>
