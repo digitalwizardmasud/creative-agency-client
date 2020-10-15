@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Container,Row } from 'react-bootstrap';
 import FeedbackDetails from './FeedbackDetails';
-import man from '../../../images/customer-1.png'
+import loader from '../../../images/loader.gif'
 const Feedbacks = () => {
     const [allFeedbacks,setAllFeedbacks]=useState([])
     useEffect(()=>{
-        fetch('https://creative-agency-fullstack.herokuapp.com/show-feedbacks')
+        fetch('http://localhost:3001/show-feedbacks')
         .then(res=>res.json())
         .then(result=>{
             setAllFeedbacks(result)
@@ -20,6 +20,10 @@ const Feedbacks = () => {
                 </h4>
 
             <Row xs={12} className='align-items-center' style={{marginTop:'60px'}}>
+                    {
+                        allFeedbacks.length<1 && 
+                        <img src={loader} style={{width:'300px', margin:'auto'}}></img>
+                    }
                 {
                     allFeedbacks.map(feedback=>{
                         return <FeedbackDetails feedback={feedback}></FeedbackDetails>

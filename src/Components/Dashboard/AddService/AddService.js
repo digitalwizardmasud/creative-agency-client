@@ -3,6 +3,8 @@ import { Button, Col, Form, Row, Container } from 'react-bootstrap';
 import LeftNavbar from '../LeftNavbar/LeftNavbar';
 import './AddService.css'
 import upload from '../../../images/icons/upload.png'
+import { ToastContainer, toast } from 'react-toastify';
+
 const AddService = () => {
     const [service,setService]=useState({})
     const inputHandler=event=>{
@@ -14,11 +16,16 @@ const AddService = () => {
         formData.append('description',service.description)
         formData.append('serviceTitle',service.serviceTitle)
 
-        fetch('https://creative-agency-fullstack.herokuapp.com/add-service',{
+        fetch('http://localhost:3001/add-service',{
             method:'POST',
             body:formData
         })
+        .then(res=>res.json())
+        .then(result=>{
+            result && notify()
+        })
     }
+    const notify = () => toast("Wow! Service Added");
     return (
         <div>
             <Row xs={12}>
@@ -48,7 +55,6 @@ const AddService = () => {
                                     <input onChange={event=>setService({...service,img:event.target.files[0]})} type="file"/>
                                     <p style={{color:'#009444',margin:'0', marginLeft:'5px'}}>Upload image</p>
                                 </div>
-                                
                             </Col>
                         </Row>
                         </Form>
@@ -56,8 +62,10 @@ const AddService = () => {
                     <Button onClick={addServiceFormHandler} className='float-right mt-2' style={{background:'#009444'}} type="submit">
                         Submit
                     </Button>   
+                    
                 </Col>
             </Row>
+            <ToastContainer bodyClassName='toast-color'/>
         </div>
     );
 };

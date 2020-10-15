@@ -22,7 +22,7 @@ function App() {
       //get token and fetch user info
     const sessionData=sessionStorage.getItem('token')
     const token=JSON.parse(sessionData)
-    token && fetch('https://creative-agency-fullstack.herokuapp.com',{
+    token && fetch('http://localhost:3001',{
       method:'GET',
       headers:{ 
         'Content-Type':'application/json',

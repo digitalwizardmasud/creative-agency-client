@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import {Container, Row} from 'react-bootstrap';
-import webIcon from '../../../images/icons/service1.png'
 import ServiceDetails from './ServiceDetails';
+import loader from '../../../images/loader.gif'
 const Services = () => {
     const [allService,setAllService]=useState([])
     useEffect(()=>{
-        fetch('https://creative-agency-fullstack.herokuapp.com/show-all-service')
+        fetch('http://localhost:3001/show-all-service')
         .then(res=>res.json())
         .then(result=>{
             setAllService(result)
@@ -20,6 +20,10 @@ const Services = () => {
                     Provide awesome <span className='brand-text'>services</span>
                 </h4>
                 <Row xs={12} className='align-items-center' style={{marginTop:'60px'}}>
+                    {
+                        allService.length<1 && 
+                        <img src={loader} style={{width:'300px', margin:'auto'}}></img>
+                    }
                     {
                         allService.map(service=>{
                             return <ServiceDetails key={service._id} service={service}></ServiceDetails>

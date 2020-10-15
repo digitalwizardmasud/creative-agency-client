@@ -10,7 +10,7 @@ const NotFound = () => {
         <div className='not-found'>
             <h1>404</h1>
             <p>Page Not Found</p>
-            <Button onClick={()=>history.goBack()} className='btn-warning text-white btn-sm'>Go back</Button>
+            <Button className='btn-info btn-sm text-white' onClick={()=>history.goBack()}>Go back</Button>
         </div>
     );
 };

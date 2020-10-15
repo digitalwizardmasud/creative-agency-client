@@ -3,25 +3,27 @@ import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import LeftNavbar from '../LeftNavbar/LeftNavbar';
 import upload from '../../../images/icons/upload.png'
 import {UserContext} from '../../../App';
+import { ToastContainer, toast } from 'react-toastify';
 const Review = () => {
     const [data]=useContext(UserContext)
     console.log(data)
     const [review,setReview]=useState({})
     const addReviewFormHandler=(e)=>{
         e.preventDefault()
-        fetch('https://creative-agency-fullstack.herokuapp.com/add-review',{
+        fetch('http://localhost:3001/add-review',{
             method:'POST',
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify(review)
         })
         .then(res=>res.json())
         .then(result=>{
-            console.log(result)
+            result && notify()
         })
     }
     const inputHandler=(e)=>{
         setReview({...review, [e.target.name]:e.target.value, img:data.user?.img})
     }
+    const notify = () => toast("Wow! review added");
     return (
         <div> 
            <Row xs={12}>
@@ -52,6 +54,7 @@ const Review = () => {
                     </Container>
                 </Col>
             </Row>
+            <ToastContainer bodyClassName='toast-color'/>
         </div>
     );
 };

@@ -33,3 +33,11 @@ textarea[placeholder]{
   font-weight:bold;
   color:rgb(54, 51, 51);
 }
+
+
+
+.toast-color{
+  background:white;
+  color:#009444;
+  
+}

@@ -3,7 +3,7 @@ import { Form } from 'react-bootstrap';
 
 const AdminServiceListDetails = ({service}) => {
     const statusHandler=(e)=>{
-        fetch('https://creative-agency-fullstack.herokuapp.com/update-status',{
+        fetch('http://localhost:3001/update-status',{
             method:'PATCH',
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify({

@@ -2,21 +2,22 @@ import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import LeftNavbar from '../LeftNavbar/LeftNavbar';
-
+import { ToastContainer, toast } from 'react-toastify';
 const MakeAdmin = () => {
     const [admin, setAdmin]=useState('')
     const addAdminHandler=(e)=>{
         e.preventDefault()
-        fetch('https://creative-agency-fullstack.herokuapp.com/add-admin',{
+        fetch('http://localhost:3001/add-admin',{
             method:'POST',
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify({admin})
         })
         .then(res=>res.json())
         .then(result=>{
-            console.log(result)
+            result && notify()
         })
     }
+    const notify = () => toast("Wow! added a new admin");
     return (
         <div>
             <Row xs={12}>
@@ -43,9 +44,10 @@ const MakeAdmin = () => {
                         </Row>
                         </Form>
                     </Container>
-                    
                 </Col>
             </Row>
+            <ToastContainer bodyClassName='toast-color'/>
+
         </div>
     );
 };

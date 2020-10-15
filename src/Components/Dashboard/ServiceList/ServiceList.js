@@ -8,7 +8,7 @@ import GeneralServiceList from './GeneralServiceList/GeneralServiceList';
 const ServiceList = () => {
     const [data,setData]=useContext(UserContext)
     useEffect(()=>{
-        data.user &&  fetch('https://creative-agency-fullstack.herokuapp.com/check-admin',{
+        data.user &&  fetch('http://localhost:3001/check-admin',{
           method:'GET',
           headers:{
             'Content-Type':'application/json',
@@ -20,7 +20,7 @@ const ServiceList = () => {
           result && setData({...data,admin:result})
         })
       },[])
-
+console.log(data.user)
     return (
         <div>
             <Row xs={12}>
