@@ -5,7 +5,7 @@ import man from '../../../images/customer-1.png'
 const Feedbacks = () => {
     const [allFeedbacks,setAllFeedbacks]=useState([])
     useEffect(()=>{
-        fetch('http://localhost:3001/show-feedbacks')
+        fetch('https://creative-agency-fullstack.herokuapp.com/show-feedbacks')
         .then(res=>res.json())
         .then(result=>{
             setAllFeedbacks(result)

@@ -8,7 +8,7 @@ const GeneralServiceList = () => {
     const [data]=useContext(UserContext)
   const [allService,setAllService]=useState([])
   useEffect(()=>{
-      fetch('http://localhost:3001/show-order-by-mail',{
+      fetch('https://creative-agency-fullstack.herokuapp.com/show-order-by-mail',{
           method:'GET',
           headers:{
               'Content-Type':'application/json',
@@ -19,7 +19,7 @@ const GeneralServiceList = () => {
       .then(result=>{
           setAllService(result)
       })
-  },[data])
+  },[])
     return (
         <div style={{marginTop:'10px', marginBottom:'10px'}}>
             <h4 className='mt-4 ml-5'>Service List</h4>

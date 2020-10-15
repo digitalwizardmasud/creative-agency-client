@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { UserContext } from '../../../App';
 import LeftNavbar from '../LeftNavbar/LeftNavbar';
@@ -7,9 +7,8 @@ import GeneralServiceList from './GeneralServiceList/GeneralServiceList';
 
 const ServiceList = () => {
     const [data,setData]=useContext(UserContext)
-
     useEffect(()=>{
-        data.user &&  fetch('http://localhost:3001/check-admin',{
+        data.user &&  fetch('https://creative-agency-fullstack.herokuapp.com/check-admin',{
           method:'GET',
           headers:{
             'Content-Type':'application/json',
@@ -20,7 +19,7 @@ const ServiceList = () => {
         .then(result=>{
           result && setData({...data,admin:result})
         })
-      },[data])
+      },[])
 
     return (
         <div>
@@ -31,7 +30,7 @@ const ServiceList = () => {
                 <Col md={9} >
                     {data.admin && <AdminServiceList></AdminServiceList>}
                     
-                    { !data.admin &&<GeneralServiceList></GeneralServiceList>}
+                    {!data.admin &&<GeneralServiceList></GeneralServiceList>}
                 </Col>
             </Row>
         </div>

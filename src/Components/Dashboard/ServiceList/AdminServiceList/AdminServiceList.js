@@ -6,7 +6,7 @@ import './AdminServiceList.css'
 const AdminServiceList = () => {
     const [allService,setAllService]=useState([])
     useEffect(()=>{
-        fetch('http://localhost:3001/show-orders')
+        fetch('https://creative-agency-fullstack.herokuapp.com/show-orders')
         .then(res=>res.json())
         .then(result=>{
             setAllService(result)
@@ -22,8 +22,8 @@ const AdminServiceList = () => {
                                 <th style={{width:'20%'}}>Name</th>
                                 <th style={{width:'20%'}}>Email ID</th>
                                 <th style={{width:'20%'}}>Service</th>
-                                <th style={{width:'25%'}}>Project Details</th>
-                                <th style={{width:'10%'}}>Status</th>
+                                <th style={{width:'20%'}}>Project Details</th>
+                                <th style={{width:'20%'}}>Status</th>
                             </tr>
                         </thead>
                         <tbody>

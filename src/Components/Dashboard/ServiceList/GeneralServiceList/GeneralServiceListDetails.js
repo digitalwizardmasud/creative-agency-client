@@ -9,12 +9,13 @@ const GeneralServiceListDetails = ({service}) => {
                 <Card.Body style={{margin:'auto'}}>
                     <div className='d-flex justify-content-between align-items-center'>
                         <img style={{width:'74px', marginBottom:'10px'}} src={`data:${service.projectImage?.contentType};base64,${service.projectImage?.img}`} alt=""/>
-                        {/* <p style={{background:'#FFE3E3', color:'#FF4545', borderRadius:'5px', padding:'5px'}}>
+                        { service.status.toLowerCase() == 'done' && <p style={{background:'#C6FFE0', color:'#009444', borderRadius:'5px', padding:'5px 10px'}}>
                             {service.status}
-                        </p> */}
-                        <p style={{background:'#FFE3E3', color:'#FF4545', borderRadius:'5px', padding:'5px'}}>
+                        </p> }
+                            {service.status.toLowerCase()=='pending'&& <p style={{background:'#FFE3E3', color:'#FF4545', borderRadius:'5px', padding:'5px 10px'}}>
                             {service.status}
-                        </p>
+                        </p>}
+                        
                     </div>
                     <Card.Title style={{fontSize:'20px', fontWeight:'600', color:'#111430'}}>{service.serviceTitle}</Card.Title>
                         <Card.Text style={{fontSize:'16px', fontWeight:'300'}}>

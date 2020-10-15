@@ -4,7 +4,9 @@ import LeftNavbar from '../LeftNavbar/LeftNavbar';
 import upload from '../../../images/icons/upload.png'
 import './Order.css'
 import {UserContext} from '../../../App'
+import { useHistory } from 'react-router-dom';
 const Order = () => {
+    const history=useHistory()
     const [data]=useContext(UserContext)
     const [order,setOrder]=useState({status:'pending'})
     useEffect(()=>{
@@ -19,14 +21,14 @@ const Order = () => {
     console.log(data)
     const addOrderForm=(e)=>{
         e.preventDefault()
-        fetch('http://localhost:3001/add-order',{
+        fetch('https://creative-agency-fullstack.herokuapp.com/add-order',{
             method:'POST',
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify(order)
         })
         .then(res=>res.json())
         .then(result=>{
-            console.log(result)
+           result && history.replace('/dashboard/service-list')
         })
     }
     const inputHandler=(e)=>{

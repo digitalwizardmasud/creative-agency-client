@@ -22,7 +22,7 @@ function App() {
       //get token and fetch user info
     const sessionData=sessionStorage.getItem('token')
     const token=JSON.parse(sessionData)
-    token && fetch('http://localhost:3001',{
+    token && fetch('https://creative-agency-fullstack.herokuapp.com',{
       method:'GET',
       headers:{ 
         'Content-Type':'application/json',
@@ -52,25 +52,25 @@ function App() {
             <Dashboard></Dashboard>
           </PrivateRoute>
 
-          <Route exact path='/dashboard/service-list'>
+          <PrivateRoute exact path='/dashboard/service-list'>
             <ServiceList></ServiceList>
-          </Route>
+          </PrivateRoute>
 
-          <Route exact path='/dashboard/order'>
+          <PrivateRoute exact path='/dashboard/order'>
             <Order></Order>
-          </Route>
+          </PrivateRoute>
 
-          <Route exact path='/dashboard/review'>
+          <PrivateRoute exact path='/dashboard/review'>
             <Review></Review>
-          </Route>
+          </PrivateRoute>
 
-          <Route exact path='/dashboard/add-service'>
+          <PrivateRoute exact path='/dashboard/add-service'>
             <AddService></AddService>
-          </Route>
+          </PrivateRoute>
 
-          <Route exact path='/dashboard/make-admin'>
+          <PrivateRoute exact path='/dashboard/make-admin'>
             <MakeAdmin></MakeAdmin>
-          </Route>
+          </PrivateRoute>
 
           <Route exact path='/login'>
             <Login></Login>

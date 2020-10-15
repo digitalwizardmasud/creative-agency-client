@@ -9,7 +9,7 @@ const Review = () => {
     const [review,setReview]=useState({})
     const addReviewFormHandler=(e)=>{
         e.preventDefault()
-        fetch('http://localhost:3001/add-review',{
+        fetch('https://creative-agency-fullstack.herokuapp.com/add-review',{
             method:'POST',
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify(review)
