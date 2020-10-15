@@ -1,32 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {Container, Row} from 'react-bootstrap';
 import AdminServiceListDetails from './AdminServiceListDetails';
 import { Table } from 'react-bootstrap';
 import './AdminServiceList.css'
 const AdminServiceList = () => {
-    const allService=[
-        {
-            status:'pending',
-            name:'Sufi Ahamed Hamim',
-            email:'sufi@gmail.com',
-            serviceTitle:'Graphics',
-            projectDetails:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
-        },
-        {
-            status:'pending',
-            name:'Sufi Ahamed Hamim',
-            email:'sufi@gmail.com',
-            serviceTitle:'Graphics',
-            projectDetails:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
-        },
-        {
-            status:'pending',
-            name:'Sufi Ahamed Hamim',
-            email:'sufi@gmail.com',
-            serviceTitle:'Graphics',
-            projectDetails:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
-        }
-    ]
+    const [allService,setAllService]=useState([])
+    useEffect(()=>{
+        fetch('http://localhost:3001/show-orders')
+        .then(res=>res.json())
+        .then(result=>{
+            setAllService(result)
+        })
+    },[])
     return (
         <div style={{marginTop:'10px', marginBottom:'10px'}}>
             <h4 className='mt-4 ml-5'>Service List</h4>
@@ -44,7 +29,7 @@ const AdminServiceList = () => {
                         <tbody>
                             {
                                 allService.map(service=>{
-                                    return <AdminServiceListDetails service={service}></AdminServiceListDetails>
+                                    return <AdminServiceListDetails key={service._id} service={service}></AdminServiceListDetails>
                                 })
                             }
                         </tbody>

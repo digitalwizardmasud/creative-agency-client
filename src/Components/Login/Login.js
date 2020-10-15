@@ -13,7 +13,11 @@ firebase.initializeApp(firebaseConfig);
 const Login = () => {
     const history=useHistory()
     const [data,setData]=useContext(UserContext)
-    
+    firebase.auth().onIdTokenChanged(function(user) {
+        if (user) {
+          console.log(user)
+        }
+      });
   const googleSigninHandler=()=>{    
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider)

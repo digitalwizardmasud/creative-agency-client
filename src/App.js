@@ -15,7 +15,7 @@ import PrivateRoute from './Components/PrivateRoute/PrivateRoute'
 export const UserContext=createContext()
 function App() {
   const [data,setData]=useState({})
-
+ 
 
     useEffect(()=>{
       const sessionData=sessionStorage.getItem('token')

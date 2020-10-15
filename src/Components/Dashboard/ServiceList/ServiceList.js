@@ -13,7 +13,7 @@ const ServiceList = () => {
                     <LeftNavbar></LeftNavbar>
                 </Col>
                 <Col md={9} >
-                    {/* <GeneralServiceList></GeneralServiceList> */}
+                    <GeneralServiceList></GeneralServiceList>
                     <AdminServiceList></AdminServiceList>
                 </Col>
             </Row>
