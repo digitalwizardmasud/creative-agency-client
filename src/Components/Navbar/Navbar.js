@@ -14,7 +14,7 @@ const Navbar = () => {
         <div style={{paddingTop:'20px'}}>
             <Container>
                 <Row xs={12} className='justify-content-between'>
-                    <Col xs={6}>
+                    <Col xs={6} md={5}>
                         <img style={{height:'50px'}} src={logo} alt=""/>
                     </Col>
 
@@ -23,7 +23,7 @@ const Navbar = () => {
                         <MenuIcon onClick={()=>setMenu(!menu)}></MenuIcon>
                     </Col>
 
-                    <Col xs={12} lg={6} className={`nav-items ${menu && ' toogled-items' }`}>
+                    <Col xs={12} md={7} className={`nav-items ${menu && ' toogled-items' }`}>
                         
                         <Link className={`link ${window.location.pathname=='/'?'matched-path':'my-navlink'} `} to='/'><span>Home</span></Link>
                         {
