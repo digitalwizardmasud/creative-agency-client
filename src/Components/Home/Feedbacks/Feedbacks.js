@@ -8,10 +8,10 @@ const Feedbacks = () => {
         fetch('http://localhost:3001/show-feedbacks')
         .then(res=>res.json())
         .then(result=>{
-            setAllFeedbacks(result)
+            setAllFeedbacks(result.slice(-6))
         })
     },[])
-    console.log(allFeedbacks)
+
     return (
         <div style={{margin:'100px 0'}}>
             <Container>
@@ -25,7 +25,7 @@ const Feedbacks = () => {
                         <img src={loader} style={{width:'300px', margin:'auto'}}></img>
                     }
                 {
-                    allFeedbacks.map(feedback=>{
+                    allFeedbacks.map((feedback,index)=>{
                         return <FeedbackDetails feedback={feedback}></FeedbackDetails>
                     })
                 }

@@ -3,10 +3,13 @@ import {Container, Row} from 'react-bootstrap';
 import AdminServiceListDetails from './AdminServiceListDetails';
 import { Table } from 'react-bootstrap';
 import './AdminServiceList.css'
-import { makeStyles } from '@material-ui/core/styles';
 import LinearProgress from '@material-ui/core/LinearProgress';
+import { useContext } from 'react';
+import { UserContext } from '../../../../App';
 
 const AdminServiceList = () => {
+    document.title='Creative Agency |Admin - Service List'
+    const [data]=useContext(UserContext)
     const [allService,setAllService]=useState([])
     useEffect(()=>{
         fetch('http://localhost:3001/show-orders')
@@ -17,7 +20,10 @@ const AdminServiceList = () => {
     },[])
     return (
         <div style={{marginTop:'10px', marginBottom:'10px'}}>
-            <h4 className='mt-4 ml-5'>Service List</h4>
+            <div className='d-flex justify-content-between'>
+                <h4 className='mt-4 ml-5'>Service List</h4>
+                <h2 className='mt-4' style={{fontSize:'16px', fontWeight:'500'}}>{data.user?.name || 'User'}</h2>
+            </div>
             <Container className='mt-5 admin-service-list-container'>
                             
                     <Table responsive="xs" className='admin-service-list-table' >

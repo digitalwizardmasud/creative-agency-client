@@ -11,6 +11,7 @@ import { UserContext } from '../../App';
 firebase.initializeApp(firebaseConfig);
 
 const Login = () => {
+    document.title='Creative Agency | Login'
     const history=useHistory()
     const [data,setData]=useContext(UserContext)
     firebase.auth().onIdTokenChanged(function(user) {
@@ -44,9 +45,9 @@ const Login = () => {
                 <h3 className='text-center' style={{fontSize:'24px', fontWeight:'bold'}}>
                     Login with
                 </h3>
-                <div onClick={googleSigninHandler} className=' d-flex google-flex'>
-                    <img style={{width:'30px',height:'30px'}} src={google} alt=""/>
-                    <p className='ml-5'>Continue with Google</p>
+                <div style={{cursor:'pointer'}} onClick={googleSigninHandler} className=' d-flex google-flex'>
+                    <img className='m-1' style={{width:'30px',height:'30px'}} src={google} alt=""/>
+                    <p className='ml-5 m-1'>Continue with Google</p>
                 </div>
             </div>
         </div>

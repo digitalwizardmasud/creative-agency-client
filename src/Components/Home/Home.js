@@ -7,6 +7,7 @@ import Services from './Services/Services';
 import Slider from './Slider/Slider';
 
 const Home = () => {
+    document.title='Creative Agency'
     return (
         <div>
             <Header></Header>

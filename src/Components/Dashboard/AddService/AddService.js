@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Col, Form, Row, Container } from 'react-bootstrap';
 import LeftNavbar from '../LeftNavbar/LeftNavbar';
 import './AddService.css'
 import upload from '../../../images/icons/upload.png'
 import { ToastContainer, toast } from 'react-toastify';
+import { UserContext } from '../../../App';
 
 const AddService = () => {
+    document.title='Creative Agency | Add Service'
+    const [data]=useContext(UserContext)
     const [service,setService]=useState({})
     const inputHandler=event=>{
         setService({...service, [event.target.name]:event.target.value})
@@ -33,7 +36,10 @@ const AddService = () => {
                     <LeftNavbar></LeftNavbar>
                 </Col>
                 <Col xs={12} lg={8} >
+                <div className='d-flex justify-content-between'>
                     <h4 className='mt-4 ml-5'>Add Service</h4>
+                    <h2 className='mt-4' style={{fontSize:'16px', fontWeight:'500'}}>{data.user?.name || 'User'}</h2>
+                </div>
                     <Container className='mt-5 add-service-form-container'>
                     <Form >
                         <Row xs={12} className='p-4'>

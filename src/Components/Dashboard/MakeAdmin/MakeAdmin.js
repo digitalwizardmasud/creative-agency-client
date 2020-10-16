@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useEffect } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import LeftNavbar from '../LeftNavbar/LeftNavbar';
 import { ToastContainer, toast } from 'react-toastify';
+import { UserContext } from '../../../App';
 const MakeAdmin = () => {
+    document.title='Creative Agency | Make Admin'
+    const [data]=useContext(UserContext)
     const [admin, setAdmin]=useState('')
     const addAdminHandler=(e)=>{
         e.preventDefault()
@@ -25,7 +28,10 @@ const MakeAdmin = () => {
                     <LeftNavbar></LeftNavbar>
                 </Col>
                 <Col md={9} >
-                <h4 className='mt-4 ml-5'>Make Admin</h4>
+                <div className='d-flex justify-content-between'>
+                    <h4 className='mt-4 ml-5'>Make Admin</h4>
+                    <h2 className='mt-4' style={{fontSize:'16px', fontWeight:'500'}}>{data.user?.name || 'User'}</h2>
+                </div>
                     <Container className='m-5 add-service-form-container'>
                     <Form onSubmit={addAdminHandler}>
                         <Row xs={12} className='p-4 align-items-center'>

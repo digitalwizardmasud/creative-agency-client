@@ -6,6 +6,7 @@ import { useContext } from 'react';
 import {UserContext} from '../../../../App'
 import loader from '../../../../images/loader.gif'
 const GeneralServiceList = () => {
+    document.title='Creative Agency | Service List'
     const [data]=useContext(UserContext)
   const [allService,setAllService]=useState([])
   useEffect(()=>{
@@ -23,7 +24,11 @@ const GeneralServiceList = () => {
   },[])
     return (
         <div style={{marginTop:'10px', marginBottom:'10px'}}>
-            <h4 className='mt-4 ml-5'>Service List</h4>
+            
+            <div className='d-flex justify-content-between'>
+                <h4 className='mt-4 ml-5'>Service List</h4>
+                <h2 className='mt-4' style={{fontSize:'16px', fontWeight:'500'}}>{data.user?.name || 'User'}</h2>
+            </div>
         <Container>
             <Row xs={12} className='align-items-center' style={{marginTop:'10px'}}>
                 {

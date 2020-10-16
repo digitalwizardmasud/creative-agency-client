@@ -4,3 +4,7 @@
    
     box-shadow:1px 0px 5px rgb(241, 238, 238);
 }
+.logout{
+    position:fixed;
+    bottom:0;
+}

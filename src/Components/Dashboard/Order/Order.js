@@ -6,6 +6,7 @@ import './Order.css'
 import {UserContext} from '../../../App'
 import { useHistory } from 'react-router-dom';
 const Order = () => {
+    document.title='Creative Agency | Order'
     const history=useHistory()
     const [data]=useContext(UserContext)
     const [order,setOrder]=useState({status:'pending'})
@@ -41,7 +42,10 @@ const Order = () => {
                     <LeftNavbar></LeftNavbar>
                 </Col>
                 <Col md={9} >
-                <h4 className='mt-4 ml-5'>Order</h4>
+                <div className='d-flex justify-content-between'>
+                    <h4 className='mt-4 ml-5'>Order</h4>
+                    <h2 className='mt-4' style={{fontSize:'16px', fontWeight:'500'}}>{data.user?.name || 'User'}</h2>
+                </div>
                     <Container className='order-form-container'>
                     <Form onSubmit={addOrderForm}>
                         <Row xs={12} className='p-5'>

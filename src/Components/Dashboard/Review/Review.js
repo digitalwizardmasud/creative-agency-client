@@ -1,13 +1,18 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import LeftNavbar from '../LeftNavbar/LeftNavbar';
 import upload from '../../../images/icons/upload.png'
 import {UserContext} from '../../../App';
 import { ToastContainer, toast } from 'react-toastify';
 const Review = () => {
+    document.title='Creative Agency | Review'
     const [data]=useContext(UserContext)
-    console.log(data)
     const [review,setReview]=useState({})
+    
+    useEffect(()=>{
+        setReview({...review,name:data.user?.name})
+    },[data])
+
     const addReviewFormHandler=(e)=>{
         e.preventDefault()
         fetch('http://localhost:3001/add-review',{
@@ -31,13 +36,16 @@ const Review = () => {
                     <LeftNavbar></LeftNavbar>
                 </Col>
                 <Col md={10} >
-                <h4 className='mt-4 ml-5'>Review</h4>
+                <div className='d-flex justify-content-between'>
+                    <h4 className='mt-4 ml-5'>Review</h4>
+                    <h2 className='mt-4 mr-5' style={{fontSize:'16px', fontWeight:'500'}}>{data.user?.name || 'User'}</h2>
+                </div>
                     <Container className='m-5 order-form-container'>
                     <Form onSubmit={addReviewFormHandler}>
                         <Row xs={12} className='p-5'>
                             <Col xs={12} md={7} lg={6}>
                                 <Form.Group controlId="formBasicName">
-                                    <Form.Control onBlur={inputHandler} name='name' type="name" placeholder="Your name" />
+                                    <Form.Control onChange={inputHandler} name='name' type="name" placeholder="Your name" value={review.name} />
                                 </Form.Group>
 
                                 <Form.Group controlId="formBasicDesignation">
