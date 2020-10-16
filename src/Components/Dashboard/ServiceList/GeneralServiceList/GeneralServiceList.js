@@ -10,7 +10,7 @@ const GeneralServiceList = () => {
     const [data]=useContext(UserContext)
   const [allService,setAllService]=useState([])
   useEffect(()=>{
-      fetch('http://localhost:3001/show-order-by-mail',{
+      fetch('https://creative-agency-fullstack.herokuapp.com/show-order-by-mail',{
           method:'GET',
           headers:{
               'Content-Type':'application/json',

@@ -10,7 +10,7 @@ const MakeAdmin = () => {
     const [admin, setAdmin]=useState('')
     const addAdminHandler=(e)=>{
         e.preventDefault()
-        fetch('http://localhost:3001/add-admin',{
+        fetch('https://creative-agency-fullstack.herokuapp.com/add-admin',{
             method:'POST',
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify({admin})
