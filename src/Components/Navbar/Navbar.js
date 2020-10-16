@@ -23,7 +23,7 @@ const Navbar = () => {
                         <MenuIcon onClick={()=>setMenu(!menu)}></MenuIcon>
                     </Col>
 
-                    <Col xs={12} md={7} className={`nav-items ${menu && ' toogled-items' }`}>
+                    <Col style={{margin:'auto'}} xs={12} md={7} className={`nav-items ${menu && ' toogled-items' }`}>
                         
                         <Link className={`link ${window.location.pathname=='/'?'matched-path':'my-navlink'} `} to='/'><span>Home</span></Link>
                         {

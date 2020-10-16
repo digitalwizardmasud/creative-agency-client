@@ -24,11 +24,7 @@ input[placeholder]{
 textarea[placeholder]{
   font-size:15px
 }
-@media only screen and (max-width:400px){
-  .footer-textarea[placeholder]{
-    font-size:8px
-  }
-}
+
 .link:hover{
   font-weight:bold;
   color:rgb(54, 51, 51);
