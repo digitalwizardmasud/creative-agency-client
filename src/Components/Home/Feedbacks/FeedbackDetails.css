@@ -3,3 +3,11 @@
     border-radius:8px;
     cursor:pointer;
 }
+@media only screen and (max-width:767px){
+    .feedback-top{
+        justify-content:center;
+    }
+    .feedback-description{
+        padding:0 10%;
+    }
+}

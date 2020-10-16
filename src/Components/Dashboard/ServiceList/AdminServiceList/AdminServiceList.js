@@ -26,7 +26,7 @@ const AdminServiceList = () => {
             </div>
             <Container className='mt-5 admin-service-list-container' style={{background:'#f1f6ff'}}>
                             
-                    <Table responsive="xs" className='admin-service-list-table' >
+                    <Table responsive="xs" className='admin-service-list-table' style={{background:'#f1f6ff'}} >
                         <thead className='admin-service-list-table-head'>
                             <tr>
                                 <th style={{width:'20%'}}>Name</th>

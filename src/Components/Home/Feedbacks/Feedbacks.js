@@ -26,7 +26,7 @@ const Feedbacks = () => {
                     }
                 {
                     allFeedbacks.map((feedback,index)=>{
-                        return <FeedbackDetails key={feedback._id} allFeedbacks={allFeedbacks} setAllFeedbacks={setAllFeedbacks} feedback={feedback}></FeedbackDetails>
+                        return <FeedbackDetails key={feedback._id}  feedback={feedback}></FeedbackDetails>
                     })
                 }
             </Row>

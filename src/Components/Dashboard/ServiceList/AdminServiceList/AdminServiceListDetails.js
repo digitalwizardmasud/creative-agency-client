@@ -1,8 +1,13 @@
 import React from 'react';
+import { useState } from 'react';
 import { Form } from 'react-bootstrap';
+import { ToastContainer, toast } from 'react-toastify';
 
 const AdminServiceListDetails = ({service}) => {
+    const notify = () => toast("Wow! status changed");
+    const [pending, setPending]=useState(service.status.toLowerCase()=='pending')
     const statusHandler=(e)=>{
+        setPending(!pending)
         fetch('https://creative-agency-fullstack.herokuapp.com/update-status',{
             method:'PATCH',
             headers:{'Content-Type':'application/json'},
@@ -13,12 +18,12 @@ const AdminServiceListDetails = ({service}) => {
         })
         .then(res=>res.json())
         .then(result=>{
-            console.log(result)
+            result && notify()
         })
     }
     
     return (
-        
+        <>
         <tr style={{ fontWeight:'400',}}>
             <td>{service.name}</td>
             <td>{service.email}</td>
@@ -26,14 +31,14 @@ const AdminServiceListDetails = ({service}) => {
             <td>{service.projectDetails}</td>
             <td>
             {
-                service.status.toLowerCase()=='pending' &&
+                pending &&
                  <Form.Control as="select" className='text-danger' onChange={statusHandler}>
                     <option  selected style={{color:'#FF4545'}}>Pending</option>
                     <option style={{color:'#009444'}}>Done</option>
                 </Form.Control>
             }
             {
-                service.status.toLowerCase()=='done'&&
+                !pending &&
                 <Form.Control className='text-success' as="select" onChange={statusHandler}>
                     <option style={{color:'#FF4545'}}>Pending</option>
                     <option selected style={{color:'#009444'}}>Done</option>
@@ -41,6 +46,9 @@ const AdminServiceListDetails = ({service}) => {
             }
             </td>
         </tr>
+        <ToastContainer bodyClassName='toast-color'/>
+
+        </>
     );
 };
 

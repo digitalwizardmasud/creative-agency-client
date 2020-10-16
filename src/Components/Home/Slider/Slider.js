@@ -42,9 +42,9 @@ const Slider = () => {
                 <Carousel responsive={responsive} infinite={true} autoPlay={true} autoPlaySpeed={5000}
                     keyBoardControl={true}  dotListClass="custom-dot-list-style" showDots={true}>
                     {
-                        allCarousel.map(carousel=>{
+                        allCarousel.map((carousel,index)=>{
                             return(
-                                <div>
+                                <div key={index+100}>
                                     <img className='carousel-image' src={carousel} alt=""/>
                                 </div>
                             )

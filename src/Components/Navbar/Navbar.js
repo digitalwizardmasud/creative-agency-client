@@ -30,7 +30,7 @@ const Navbar = () => {
                              ['Our Team', 'Our Portfolio', 'Contact Us'].map(item=>{
                                  const matchedPath=window.location.pathname=='/'+item.toLowerCase().split(' ').join('-')
                                 return(
-                                    <Link className={`link ${matchedPath?'matched-path':'my-navlink'} mx-2 my-2 `} to={`/${item.toLowerCase().split(' ').join('-')}`}
+                                    <Link className={`link ${matchedPath?'matched-path':'my-navlink'} mx-2 my-1 `} to={`/${item.toLowerCase().split(' ').join('-')}`}
                                          >
                                         <span>{item}</span>
                                     </Link>

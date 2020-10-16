@@ -1,15 +1,24 @@
 .header-font{
     font-size:48px;
 }
+
 @media only screen and (max-width: 767px) {
     .header-font {
-        font-size:35px;
-        text-align:center
+        font-size:4vw;
+        text-align:center; 
+        padding:0 50px;
     }
+    .hire-me{
+        display:none;
+    }
+    
   }
 @media only screen and (min-width:768px) and (max-width: 1000px) {
     .header-font {
         font-size:40px
     }
+    
   }
-  
+  .header-main-container{
+    margin-top:20px;
+}
