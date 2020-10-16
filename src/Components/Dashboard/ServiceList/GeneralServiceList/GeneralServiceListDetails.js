@@ -4,7 +4,7 @@ import './GeneralServiceListDetails.css'
 const GeneralServiceListDetails = ({service}) => {
     return (
         
-            <Col xs={12} md={8} lg={6} className='text-left'>
+            <Col xs={12} md={10} lg={6} className='text-left' >
             <Card className='general-service-list-details-card mt-5' style={{ width: '90%',margin:'auto', borderRadius:'10px' }}>
                 <Card.Body style={{margin:'auto'}}>
                     <div className='d-flex justify-content-between align-items-center'>

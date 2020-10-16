@@ -66,6 +66,7 @@ const LeftNavbar = () => {
                     <p className='ml-1' style={{fontSize:'16px', fontWeight:'400'}}>Logout</p>
                 </div>
             </div>
+
         </div>
     );
 };

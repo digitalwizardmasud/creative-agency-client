@@ -24,18 +24,18 @@ const MakeAdmin = () => {
     return (
         <div>
             <Row xs={12}>
-                <Col md={2}>
+                <Col xs={12} md={3} lg={2}>
                     <LeftNavbar></LeftNavbar>
                 </Col>
-                <Col md={9} >
+                <Col xs={12} md={8} lg={8}>
                 <div className='d-flex justify-content-between'>
                     <h4 className='mt-4 ml-5'>Make Admin</h4>
-                    <h2 className='mt-4' style={{fontSize:'16px', fontWeight:'500'}}>{data.user?.name || 'User'}</h2>
+                    <h2 className='mt-4 pr-5 display-username-1' style={{fontSize:'16px', fontWeight:'500'}}>{data.user?.name || 'User'}</h2>
                 </div>
-                    <Container className='m-5 add-service-form-container'>
+                    <Container className=' add-service-form-container mt-5' style={{background:'#f1f6ff'}}>
                     <Form onSubmit={addAdminHandler}>
                         <Row xs={12} className='p-4 align-items-center'>
-                            <Col md={5} >
+                            <Col md={9} lg={7} >
                                 <Form.Label>Email</Form.Label>
                                 <Form.Group controlId="formBasicText">
                                 <Form.Control onBlur={e=>setAdmin(e.target.value)} type="text" placeholder="abc@gmail.com" />

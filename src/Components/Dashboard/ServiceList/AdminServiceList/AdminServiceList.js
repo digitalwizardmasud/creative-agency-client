@@ -22,9 +22,9 @@ const AdminServiceList = () => {
         <div style={{marginTop:'10px', marginBottom:'10px'}}>
             <div className='d-flex justify-content-between'>
                 <h4 className='mt-4 ml-5'>Service List</h4>
-                <h2 className='mt-4' style={{fontSize:'16px', fontWeight:'500'}}>{data.user?.name || 'User'}</h2>
+                <h2 className='mt-4 display-username-1' style={{fontSize:'16px', fontWeight:'500'}}>{data.user?.name || 'User'}</h2>
             </div>
-            <Container className='mt-5 admin-service-list-container'>
+            <Container className='mt-5 admin-service-list-container' style={{background:'#f1f6ff'}}>
                             
                     <Table responsive="xs" className='admin-service-list-table' >
                         <thead className='admin-service-list-table-head'>

@@ -24,10 +24,10 @@ console.log(data.user)
     return (
         <div>
             <Row xs={12}>
-                <Col md={3} lg={2}>
+                <Col xs={12} md={3} lg={2}>
                     <LeftNavbar></LeftNavbar>
                 </Col>
-                <Col md={9} >
+                <Col xs={12} md={8} lg={9} >
                     {data.admin && <AdminServiceList></AdminServiceList>}
                     
                     {!data.admin &&<GeneralServiceList></GeneralServiceList>}

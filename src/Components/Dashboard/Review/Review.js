@@ -32,18 +32,18 @@ const Review = () => {
     return (
         <div> 
            <Row xs={12}>
-                <Col md={2}>
+                <Col xs={12} md={3} lg={2}>
                     <LeftNavbar></LeftNavbar>
                 </Col>
-                <Col md={10} >
+                <Col xs={12} md={7} lg={8} >
                 <div className='d-flex justify-content-between'>
                     <h4 className='mt-4 ml-5'>Review</h4>
-                    <h2 className='mt-4 mr-5' style={{fontSize:'16px', fontWeight:'500'}}>{data.user?.name || 'User'}</h2>
+                    <h2 className='mt-4 mr-5 display-username-1' style={{fontSize:'16px', fontWeight:'500'}}>{data.user?.name || 'User'}</h2>
                 </div>
-                    <Container className='m-5 order-form-container'>
+                    <Container className=' order-form-container mt-5' style={{background:'#f1f6ff'}}>
                     <Form onSubmit={addReviewFormHandler}>
-                        <Row xs={12} className='p-5'>
-                            <Col xs={12} md={7} lg={6}>
+                        <Row xs={10} sm={12} className='p-5'>
+                            <Col xs={10} md={12} lg={8}>
                                 <Form.Group controlId="formBasicName">
                                     <Form.Control onChange={inputHandler} name='name' type="name" placeholder="Your name" value={review.name} />
                                 </Form.Group>

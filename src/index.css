@@ -41,3 +41,9 @@ textarea[placeholder]{
   color:#009444;
   
 }
+
+@media only screen and (max-width:767px){
+  .display-username-1{
+    display:none;
+  }
+}

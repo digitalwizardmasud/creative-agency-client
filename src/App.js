@@ -48,10 +48,6 @@ function App() {
             <Home></Home>
           </Route>
 
-          <PrivateRoute exact path='/dashboard'>
-            <Dashboard></Dashboard>
-          </PrivateRoute>
-
           <PrivateRoute exact path='/dashboard/service-list'>
             <ServiceList></ServiceList>
           </PrivateRoute>

@@ -32,18 +32,18 @@ const AddService = () => {
     return (
         <div>
             <Row xs={12}>
-                <Col xs={12} lg={2}>
+                <Col xs={12} md={3} lg={2}>
                     <LeftNavbar></LeftNavbar>
                 </Col>
-                <Col xs={12} lg={8} >
+                <Col xs={12} md={7} lg={8} >
                 <div className='d-flex justify-content-between'>
                     <h4 className='mt-4 ml-5'>Add Service</h4>
-                    <h2 className='mt-4' style={{fontSize:'16px', fontWeight:'500'}}>{data.user?.name || 'User'}</h2>
+                    <h2 className='mt-4 display-username-1' style={{fontSize:'16px', fontWeight:'500'}}>{data.user?.name || 'User'}</h2>
                 </div>
-                    <Container className='mt-5 add-service-form-container'>
+                    <Container className='mt-5 add-service-form-container' style={{background:'#f1f6ff'}}>
                     <Form >
                         <Row xs={12} className='p-4'>
-                            <Col md={8} lg={6}>
+                            <Col md={10} lg={6}>
                                 <Form.Label>Service Title</Form.Label>
                                 <Form.Group controlId="formBasicText">
                                 <Form.Control onBlur={inputHandler} name='serviceTitle' type="text" placeholder="Enter title" />
