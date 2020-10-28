@@ -2,7 +2,7 @@
 ---
 #### Creative Agency Overview:
 * Multi level user dashboard 
-* Add Event
+* Add Service
 * Make Admin
 * Create Order
 * Show all orders as admin
